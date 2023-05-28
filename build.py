@@ -69,7 +69,6 @@ def main():
     print(f"Generating PAC script from gfwlist")
     with open(os.path.join(OUT_DIR, "pac-gfwlist.txt"), "w") as f:
         f.write(code)
-        f.write(data)
         f.write("\n")
         f.write(gfwlist_part)
 
