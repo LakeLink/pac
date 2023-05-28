@@ -9,7 +9,7 @@ import requests
 
 GFWLIST_FILE = "gfwlist.txt"
 GFWLIST_URL = 'https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt'
-CUSTOM_PROXY_LIST = ["bing.com", "openai.com"]
+CUSTOM_PROXY_LIST = ["bing.com", "openai.com", "cengage.com"]
 
 def get_gfwlist():
     if os.path.isfile(GFWLIST_FILE):
