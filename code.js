@@ -60,9 +60,9 @@ function hasBlacklistedPattern(url) {
   return hasMatchedPattern(url, BLACKPAT);
 }
 
-function isChina(host) {
-  return belongsToSubnet(host, CHINA);
-}
+// function isChina(host) {
+//   return belongsToSubnet(host, CHINA);
+// }
 
 function isLan(host) {
   return belongsToSubnet(host, LAN);
@@ -88,7 +88,9 @@ function FindProxyForURL(url, host) {
     // resolution failed or is IPv6 addr
     return proxy;
   }
-  if (isLan(remote) || isChina(remote)) {
+
+  // if (isLan(remote) || isChina(remote)) {
+    if (isLan(remote)) {
     return direct;
   }
   return proxy;

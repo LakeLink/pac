@@ -9,7 +9,7 @@ import requests
 
 GFWLIST_FILE = "gfwlist.txt"
 GFWLIST_URL = 'https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt'
-
+CUSTOM_PROXY_LIST = ["bing.com", "openai.com"]
 
 def get_gfwlist():
     if os.path.isfile(GFWLIST_FILE):
@@ -88,6 +88,10 @@ def parse_gfwlist(text):
 def generate_pac_partial():
     gfwlist = get_gfwlist()
     domains, blackpat, whitepat = parse_gfwlist(gfwlist)
+    
+    for i in CUSTOM_PROXY_LIST:
+        update_domains(domains, i, 0)
+
     return "var DOMAINS = {};\n\nvar BLACKPAT = {};\n\nvar WHITEPAT = {};\n".format(
         json.dumps(domains, indent=2),
         json.dumps(blackpat, indent=2),
