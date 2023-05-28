@@ -82,6 +82,7 @@ function FindProxyForURL(url, host) {
     return direct;
   }
 
+  /*
   // Fallback to IP whitelist
   var remote = dnsResolve(host);
   if (!remote || remote.indexOf(":") !== -1) {
@@ -93,10 +94,11 @@ function FindProxyForURL(url, host) {
   if (isLan(remote)) {
     return direct;
   }
+  */
   return direct;
 }
 
-var LAN = [
+/*var LAN = [
   [0x00000000, 0xFFFFFFFF], // 0.0.0.0/32
   [0x0A000000, 0xFF000000], // 10.0.0.0/8
   [0x64400000, 0xFFC00000], // 100.64.0.0/10
@@ -104,5 +106,5 @@ var LAN = [
   [0xA9FE0000, 0xFFFF0000], // 169.254.0.0/16
   [0xAC100000, 0xFFF00000], // 172.16.0.0/12
   [0xC0A80000, 0xFFFF0000]  // 192.168.0.0/16
-];
+];*/
 
