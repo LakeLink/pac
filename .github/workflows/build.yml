@@ -3,7 +3,7 @@ name: build
 on:
   push:
     branches:
-      - master
+      - gfwlist-only
   schedule:
     - cron: "0 12 * * 6"  # 8 PM CST every Saturday
 
