@@ -81,7 +81,6 @@ def parse_gfwlist(text):
                 blackpat.append(line)
             else:
                 whitepat.append(line)
-    postproc_domains(domains)
     return domains, blackpat, whitepat
 
 
@@ -91,6 +90,7 @@ def generate_pac_partial():
     
     for i in CUSTOM_PROXY_LIST:
         update_domains(domains, i, 0)
+    postproc_domains(domains)
 
     return "var DOMAINS = {};\n\nvar BLACKPAT = {};\n\nvar WHITEPAT = {};\n".format(
         json.dumps(domains, indent=2),
