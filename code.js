@@ -90,10 +90,10 @@ function FindProxyForURL(url, host) {
   }
 
   // if (isLan(remote) || isChina(remote)) {
-    if (isLan(remote)) {
+  if (isLan(remote)) {
     return direct;
   }
-  return proxy;
+  return direct;
 }
 
 var LAN = [
